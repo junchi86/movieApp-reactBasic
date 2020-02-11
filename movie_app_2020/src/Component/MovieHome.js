@@ -11,12 +11,13 @@ class MovieHome extends React.Component {
   }
 
   getMovie = async () => {
-      const { data: { data: { movies } } } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=rating`)
-      this.setState({ movies, isLoading: false })
-  }
-  componentDidMount() {
+    const { data: { data: { movies } } } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=rating`)
+    this.setState({ movies, isLoading: false })}
+
+  componentDidMount(){
     this.getMovie()
   }
+  
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 35 }} spin />
     const { isLoading, movies } = this.state

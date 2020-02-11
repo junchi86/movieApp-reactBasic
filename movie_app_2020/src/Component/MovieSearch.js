@@ -15,9 +15,16 @@ class MovieSearch extends React.Component {
       const { data: { data: { movies } } } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=rating&query_term=${this.props.location.state.value}`)
       this.setState({ movies, isLoading: false })}
   }
+
+  componentDidUpdate(){
+    this.getMovie()
+    this.props.location.state={pathname:'',state:{value:''}}
+  }
   componentDidMount() {
     this.getMovie()
+    this.props.location.state={pathname:'',state:{value:''}}
   }
+  
   render() {
     const antIcon = <Icon type="loading" style={{ fontSize: 35 }} spin />
     const { isLoading, movies } = this.state

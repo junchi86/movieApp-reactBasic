@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { HashRouter as Router, Route,Switch } from 'react-router-dom'
 import MovieHome from './Component/MovieHome';
 import MovieDetail from './Component/MovieDetail';
 import { createGlobalStyle } from 'styled-components'
@@ -31,11 +31,12 @@ function App() {
     <>
       <Router>
         <Header />
-        <Route exact path='/' component={MovieHome}></Route>
-        <Route exact path='/about' component={About}></Route>
-        <Route path='/movie-detail/:trailer' component={MovieDetail}></Route>
-        <Route path='/search' component={MovieSearch}></Route>
-        <Route path='/search/:value' component={MovieSearch}></Route>
+        <Switch>
+          <Route path='/search/:value' component={MovieSearch}></Route>
+          <Route exact path='/' component={MovieHome}></Route>
+          <Route exact path='/about' component={About}></Route>
+          <Route path='/movie-detail/:trailer' component={MovieDetail}></Route>
+        </Switch>
       </Router>
       <GlobalStyle />
     </>
