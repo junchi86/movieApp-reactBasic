@@ -4,15 +4,16 @@ import Movie from './Movie'
 import './MovieHome.css'
 import {Spin,Icon} from 'antd'
 
-class MovieHome extends React.Component {
+class MovieSearch extends React.Component {
   state = {
     isLoading: true,
     movies: [],
   }
 
   getMovie = async () => {
-      const { data: { data: { movies } } } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=rating`)
-      this.setState({ movies, isLoading: false })
+      if(this.props.location.state.value!==(undefined)){
+      const { data: { data: { movies } } } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=rating&query_term=${this.props.location.state.value}`)
+      this.setState({ movies, isLoading: false })}
   }
   componentDidMount() {
     this.getMovie()
@@ -29,7 +30,7 @@ class MovieHome extends React.Component {
          
         ) : (
             <div className="movies">
-              {movies.map(movie => (
+              {movies? movies.map(movie => (
                 <Movie
                   key={movie.yt_trailer_code}
                   year={movie.year}
@@ -40,11 +41,12 @@ class MovieHome extends React.Component {
                   trailer={movie.yt_trailer_code}
                   background={movie.background_image}
                 />
-              ))}
+              )):<h1>Result:0</h1>}
             </div>
           )}
       </section>
     );
   }
 }
-export default MovieHome;
+export default MovieSearch;
+

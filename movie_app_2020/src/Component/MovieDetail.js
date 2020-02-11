@@ -1,12 +1,64 @@
 
 import React from 'react'
+import styled from 'styled-components'
+
+const Div = styled.div`
+width:100%;
+height:94vh;
+margin:auto;
+position:relative;
+    iframe{
+        position:absolute;
+        width: 60%;
+        height: 40vh;
+        margin:auto;
+        transform:translateX(-50%);
+        top:6%;
+        left:50%;
+        border-radius:10px;     
+        z-index:10;
+    }
+    .text{
+        position:absolute;
+        width:60%;
+        height:auto;
+        padding:30px;
+        border-radius:10px;
+        top:56%;
+        transform:translateX(-50%);
+        left:50%;
+        background:rgba(0,0,0,0.6);
+        h1{
+            padding-bottom:20px;
+            font-size:40px;
+            font-weight:bold;
+            color:white;
+        }
+        h2{
+            font-size:30px;
+            padding-bottom:10px;
+            color:lightpink
+        }
+        h3{
+            font-size:30px;
+            color:gray
+        }
+    }
+
+`
 
 function MovieDetail({ location }) {
     return (
-        <div>
-            <iframe title={location.state.title} width="1920" height="1080" src={`https://www.youtube.com/embed/${location.state.trailer}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-        </div>
-    )
-}
+        <Div style={{background: `URL(${location.state.background})`,
+                    backgroundRepeat:'no-repeat',
+                    backgroundSize:'cover'}}>
+            <iframe title={location.state.trailer} src={`https://www.youtube.com/embed/${location.state.trailer}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+            <div className='text'>
+                <h1>{location.state.title}</h1>
+                <h2>{location.state.year} {location.state.genres.map(i=>i)}</h2>
+                <h3>{location.state.summary.slice(0,400)}</h3>
+            </div>
+        </Div>
+    )}
 
 export default MovieDetail

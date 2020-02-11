@@ -2,15 +2,22 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  background:rgba(49, 46, 4, 0.315)
 }
 
 .loader {
   width: 100%;
-  height: 100vh;
+  height: 94vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 300;
+  font-weight: bold;
+  font-size: 40px;
+  color:tomato
+}
+
+.loader span {
+  padding-right: 20px;
 }
 
 .movies {
@@ -21,4 +28,11 @@
   padding: 50px;
   padding-top: 70px;
   width: 80%;
+}
+
+.movies h1{
+  line-height:81.6vh;
+  text-align: center;
+  font-size: 80px;
+  color:tomato
 }
