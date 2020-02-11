@@ -23,6 +23,39 @@ const DDiv = styled.div`
         transform:translateY(-50%);
         right:13%
     }
+    @media only screen and (max-width:1000px) {
+       .menu{
+           padding-left:8%}
+       .input{
+           right:8%
+       }
+    }
+    @media only screen and (max-width:800px) {
+       .menu{
+           font-size:1.2em;}
+       .input{
+           width:30%
+       }
+    }
+    @media only screen and (max-width:650px) {
+       .menu{
+           font-size:1em;}
+       .input{
+           width:25%
+       }
+    }
+    @media only screen and (max-width:560px) {
+       .menu{
+           font-size:1em;
+           padding:0
+        }
+       .input{
+           width:25%;
+           right:0
+       }
+    }
+
+}
 `
 
 function Header() {
