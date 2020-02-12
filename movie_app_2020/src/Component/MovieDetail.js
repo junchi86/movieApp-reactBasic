@@ -45,6 +45,32 @@ position:relative;
         }
     }
 
+    @media only screen and (max-width:1200px) {
+        width:100%;
+        height:100%;
+        position:static;
+        margin:auto;
+        iframe{
+            position:static;
+            width:100%;
+            max-height: 80vh;
+            top:0;
+            left:0;
+            transform:none;
+        }
+        .text{position:static;
+            margin:1vh auto 0 auto;
+            width:100%;
+            height:auto;
+            top:0;
+            left:0;
+            transform:none;
+            h1{font-size:30px}
+            h2{font-size:20px}
+            h3{font-size:20px}
+        }
+    }
+
 `
 
 function MovieDetail({ location }) {
