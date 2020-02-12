@@ -21,53 +21,23 @@
 
 @media only screen and (max-width:1270px) {
   .movie img {
-    width:350px;
+    width:98%;
   }
   .movies .movie{ 
-    margin:0 auto 70px auto ;
-    width:400px;
+    margin: 5vh 2vw;
+    width:30vw;
     height: auto;
   }
 }
 
-@media only screen and (max-width:930px) {
-  .movie img{
-    width:300px;
+@media only screen and (max-width:768px) {
+  .movie img {
+    width:99%;
   }
-  .movies .movie{
-    width:350px;
+  .movies .movie{ 
+    margin: 3vh 2vw;
+    width: 70vw;
     height: auto;
-  }
-}
-@media only screen and (max-width:820px) {
-  .movie img{
-    width:300px;
-  }
-  .movies .movie{
-    width:100%;
-    height: auto;
-  }
-}
-
-@media only screen and (max-width:720px) {
-  .movie img{
-    width:80%;
-  }
-  .movies .movie{
-    width:80%;
-    height: auto;
-  }
-}
-
-@media only screen and (max-width:600px) {
-  .movie img{
-    max-width:100%;
-  }
-  .movies .movie{
-    margin:auto;
-    max-width:100%;
-    height: auto;
-
   }
 }
 

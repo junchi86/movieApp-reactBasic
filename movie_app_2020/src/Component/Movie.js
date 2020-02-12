@@ -26,7 +26,7 @@ function Movie({ year, title, summary, poster, genres, trailer,background }) {
             hoverable
             cover={<img src={poster} alt={title} title={title} />}
         >
-            <Card.Meta title={title + year} description={ genres.map((genre) => genre) + '...'+ summary.slice(0, 140)+'...'} />
+            <Card.Meta title={title + year} description={summary.slice(0, 140)+'...'} />
         </Card></Link>       
     );
 }
